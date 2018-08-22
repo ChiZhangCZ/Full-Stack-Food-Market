@@ -1,0 +1,33 @@
+body{
+
+	background-image: url(chopping.jpg);
+    background-size: 100% auto;               
+    background-repeat: no-repeat;
+}
+
+.container{
+
+	width: 1900px;
+}
+
+h1{
+
+	text-align: center;
+	margin-top: 100px;
+	font-family: "Bungee Shade"; font-size: 100px;
+}
+
+.button{
+
+	display: inline-block;
+	margin-left: 47%;
+}
+
+
+label {
+   width: 45%;
+   display: inline-block;
+   text-align: right;
+   padding: 15px;
+   font-family: "Paprika"; font-size: 25px;
+}
