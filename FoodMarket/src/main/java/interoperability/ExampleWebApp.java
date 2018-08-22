@@ -58,14 +58,11 @@ public class ExampleWebApp {
 				PreparedStatement stmt = conn.prepareStatement(sql);
 				stmt.setString(1,name);	
 				ResultSet rs = stmt.executeQuery();
-
+				JSONObject obj = null;
 			    while (rs.next()) {
-			        int total_rows = rs.getMetaData().getColumnCount();
-			        JSONObject obj = new JSONObject();
-			        for (int i = 0; i < total_rows; i++) {
-			            obj.put(rs.getMetaData().getColumnLabel(i+1)
-			                    .toLowerCase(), rs.getObject(i + 1));
-			        }
+			        obj = new JSONObject();
+	                obj.put("first_name", rs.getString("First_Name"));
+	                obj.put("last_name", rs.getString("Last_Name"));
 			        jsonArray.put(obj);
 			    }
 			    

@@ -1,19 +1,12 @@
 body{
 
 	background-image: url(chopping.jpg);
-    background-size: 100% auto;               
-    background-repeat: no-repeat;
-}
-
-.container{
-
-	width: 1900px;
+    background-repeat:no-repeat;
+    background-size:100% 100vh;    
 }
 
 h1{
-
 	text-align: center;
-	margin-top: 100px;
 	font-family: "Bungee Shade"; font-size: 100px;
 }
 

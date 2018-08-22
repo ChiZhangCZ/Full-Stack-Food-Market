@@ -1,0 +1,66 @@
+<html>
+    <head>
+            <script>
+
+            function addInterestingStuff(username, firstname, lastname){
+            	var xhr = new XMLHttpRequest();
+            	xhr.open("POST", "http://localhost:8080/FoodMarket/example/web/addFromInput", true);
+            	xhr.setRequestHeader('Content-Type', 'application/json');
+            	var data = JSON.stringify({"username": username, "first_name": firstname, "last_name": lastname});
+            	xhr.send(data);
+	            
+            }
+
+            function searchStuff(name){
+                var requestURL = 'http://localhost:8080/FoodMarket/example/web/search/' + name;
+	            var request = new XMLHttpRequest();
+	            request.open('GET', requestURL);
+	            request.responseType = 'json';
+	            request.send();
+	            request.onload = function () {
+		            var results = request.response;
+		            for (var result of results){
+		            	var myH1 = document.createElement('h1');
+			            let fn = "";
+			            let ln = "";
+			            for(var key of Object.keys(result)){
+				            if(key == "first_name"){
+					            fn = result[key];
+						    }
+				            else if(key == "last_name"){
+					            ln = result[key];
+					        }
+				        myH1.textContent = "Name:"+" "+fn+" "+ln;
+				        document.getElementsByTagName('body')[0].appendChild(myH1);
+				        }
+				    }
+	            }
+            }
+
+            function deleteMember(username){
+            	var xhr = new XMLHttpRequest();
+            	xhr.open("POST", "http://localhost:8080/FoodMarket/example/web/cleanperson", true);
+            	xhr.setRequestHeader('Content-Type', 'application/json');
+            	var data = JSON.stringify({"username": username});
+            	xhr.send(data);
+	            
+            }
+            </script>
+    </head>
+    <body>
+        <p>Registration</p>
+            <input type= "text" id="username">
+            <input type= "text" id="firstname">
+            <input type= "text" id="lastname">
+            <input type= "button" 
+                   onclick = "addInterestingStuff(document.getElementById('username').value,document.getElementById('firstname').value,document.getElementById('lastname').value)" 
+                   value= "Add Member"><br><br>
+            <input type="text" id="searchtext">
+            <input type= "button" onclick = "searchStuff(document.getElementById('searchtext').value)" value= "Search Members"><br><br>
+            <input type="text" id="deletetext">
+            <input type= "button" onclick = "deleteMember(document.getElementById('deletetext').value)" value= "Delete Member"><br><br>
+            
+    </body>
+   
+     
+</html>
