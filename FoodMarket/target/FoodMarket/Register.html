@@ -8,6 +8,7 @@
             	xhr.setRequestHeader('Content-Type', 'application/json');
             	var data = JSON.stringify({"username": username, "password": password, "email": email, "first_name": firstname, "last_name": lastname});
             	xhr.send(data);
+            	xhr.responseType = 'json';
             	xhr.onload = function (){
                 	var success = xhr.response;
                 	console.log(success);
@@ -16,7 +17,7 @@
                     	alert("success");
                     }
                 	else{
-                    	alert("fail");
+                    	alert("Username/Email already taken");
                     }
                 }
 	            
@@ -57,15 +58,18 @@
 	            
             }
             </script>
+            <link rel="stylesheet" type="text/css" href="style/Register.css">
+	        <link href='https://fonts.googleapis.com/css?family=Bungee Shade' rel='stylesheet'>
+	        <link href='https://fonts.googleapis.com/css?family=Paprika' rel='stylesheet'>
     </head>
     <body>
-        <p>Registration</p>
+        <p></p>
+        <label>Username:</label> <input type= "text" id="username"><br><br>
+        <label>Password:</label><input type= "password" id="password"><br><br>
+        <label>Email:</label> <input type= "text" id="email"><br><br>
+        <label>First Name:</label> <input type= "text" id="firstname"><br><br>
+        <label>Last Name:</label><input type= "text" id="lastname"><br><br>
         <form>
-            Username: <input type= "text" id="username"><br><br>
-            Password: <input type= "password" id="password"><br><br>
-            Email: <input type= "text" id="email"><br><br>
-            First Name: <input type= "text" id="firstname"><br><br>
-            Last Name<input type= "text" id="lastname"><br><br>
             <input type= "button" 
                    onclick = "addInterestingStuff(document.getElementById('username').value,
                 	                              document.getElementById('password').value,

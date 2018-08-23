@@ -84,23 +84,23 @@ public class ExampleWebApp {
 		String PASS = "password";
 		String sql = "INSERT INTO member(Username,Password,Email,First_Name,Last_Name) VALUES(?,?,?,?,?)";
 		String success= "false";
-			try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);) {
-				Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
-				PreparedStatement stmt = conn.prepareStatement(sql);
-				stmt.setString(1,m.getUsername());
-				stmt.setString(2, m.getPassword());
-				stmt.setString(3, m.getEmail());
-				stmt.setString(4, m.getFirst_name());
-				stmt.setString(5, m.getLast_name());
-				stmt.executeUpdate();				
-				success = "true";
-			} catch (SQLException se) {
-				se.printStackTrace();
-				
-			} catch (Exception e) {
-				e.printStackTrace();
-			}			
-			return "{\"result\":\""+success +"\"}";	
+		try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);) {
+			Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			stmt.setString(1,m.getUsername());
+			stmt.setString(2, m.getPassword());
+			stmt.setString(3, m.getEmail());
+			stmt.setString(4, m.getFirst_name());
+			stmt.setString(5, m.getLast_name());
+			stmt.executeUpdate();				
+			success = "true";
+		} catch (SQLException se) {
+			se.printStackTrace();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}			
+		return "{\"result\":\""+success +"\"}";	
 	}
 	
 	@POST

@@ -15,7 +15,8 @@ label {
     display: inline-block;
     text-align: right;
     padding: 15px;
-    font-family: "Paprika"; font-size: 25px;
+    font-family: "Snippet"; font-size: 25px;
+    font-weight: bold;
 }
 
 p{

@@ -1,0 +1,23 @@
+body{
+
+	background-image: url(chopping.jpg);
+    background-repeat:no-repeat;
+    background-size:100% 100vh;    
+}
+
+form{	
+	text-align: center;
+}
+
+
+label {
+    width: 45%;
+    display: inline-block;
+    text-align: right;
+    padding: 15px;
+    font-family: "Paprika"; font-size: 25px;
+}
+
+p{
+	margin-top: 150px;
+}

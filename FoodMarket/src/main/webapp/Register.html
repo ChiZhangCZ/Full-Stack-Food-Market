@@ -1,71 +1,19 @@
 <html>
     <head>
+    <script type="text/javascript" src="Register.js"></script>
             <script>
 
-            function addInterestingStuff(username, password, email, firstname, lastname){
-            	var xhr = new XMLHttpRequest();
-            	xhr.open("POST", "http://localhost:8080/FoodMarket/example/web/addFromInput", true);
-            	xhr.setRequestHeader('Content-Type', 'application/json');
-            	var data = JSON.stringify({"username": username, "password": password, "email": email, "first_name": firstname, "last_name": lastname});
-            	xhr.send(data);
-            	xhr.responseType = 'json';
-            	xhr.onload = function (){
-                	var success = xhr.response;
-                	console.log(success);
-                	console.log(success.result);
-                	if(success.result == "true"){
-                    	alert("success");
-                    }
-                	else{
-                    	alert("Username/Email already taken");
-                    }
-                }
-	            
-            }
 
-            function searchStuff(name){
-                var requestURL = 'http://localhost:8080/FoodMarket/example/web/search/' + name;
-	            var request = new XMLHttpRequest();
-	            request.open('GET', requestURL);
-	            request.responseType = 'json';
-	            request.send();
-	            request.onload = function () {
-		            var results = request.response;
-		            for (var result of results){
-		            	var myH1 = document.createElement('h1');
-			            let fn = "";
-			            let ln = "";
-			            for(var key of Object.keys(result)){
-				            if(key == "first_name"){
-					            fn = result[key];
-						    }
-				            else if(key == "last_name"){
-					            ln = result[key];
-					        }
-				        myH1.textContent = "Name:"+" "+fn+" "+ln;
-				        document.getElementsByTagName('body')[0].appendChild(myH1);
-				        }
-				    }
-	            }
-            }
-
-            function deleteMember(username){
-            	var xhr = new XMLHttpRequest();
-            	xhr.open("POST", "http://localhost:8080/FoodMarket/example/web/cleanperson", true);
-            	xhr.setRequestHeader('Content-Type', 'application/json');
-            	var data = JSON.stringify({"username": username});
-            	xhr.send(data);
-	            
-            }
             </script>
             <link rel="stylesheet" type="text/css" href="style/Register.css">
 	        <link href='https://fonts.googleapis.com/css?family=Bungee Shade' rel='stylesheet'>
-	        <link href='https://fonts.googleapis.com/css?family=Paprika' rel='stylesheet'>
+	        <link href='https://fonts.googleapis.com/css?family=Snippet' rel='stylesheet'>
     </head>
     <body>
         <p></p>
         <label>Username:</label> <input type= "text" id="username"><br><br>
         <label>Password:</label><input type= "password" id="password"><br><br>
+        <label>Confirm Password:</label><input type= "password" id="password_confirm"><br><br>
         <label>Email:</label> <input type= "text" id="email"><br><br>
         <label>First Name:</label> <input type= "text" id="firstname"><br><br>
         <label>Last Name:</label><input type= "text" id="lastname"><br><br>
@@ -73,6 +21,7 @@
             <input type= "button" 
                    onclick = "addInterestingStuff(document.getElementById('username').value,
                 	                              document.getElementById('password').value,
+                	                              document.getElementById('password_confirm').value,
                 	                              document.getElementById('email').value,
                                                   document.getElementById('firstname').value,
                                                   document.getElementById('lastname').value)" 
