@@ -2,12 +2,24 @@
     <head>
             <script>
 
-            function addInterestingStuff(username, firstname, lastname){
+            function addInterestingStuff(username, password, email, firstname, lastname){
             	var xhr = new XMLHttpRequest();
             	xhr.open("POST", "http://localhost:8080/FoodMarket/example/web/addFromInput", true);
             	xhr.setRequestHeader('Content-Type', 'application/json');
-            	var data = JSON.stringify({"username": username, "first_name": firstname, "last_name": lastname});
+            	var data = JSON.stringify({"username": username, "password": password, "email": email, "first_name": firstname, "last_name": lastname});
             	xhr.send(data);
+            	xhr.responseType = 'json';
+            	xhr.onload = function (){
+                	var success = xhr.response;
+                	console.log(success);
+                	console.log(success.result);
+                	if(success.result == "true"){
+                    	alert("success");
+                    }
+                	else{
+                    	alert("Username/Email already taken");
+                    }
+                }
 	            
             }
 
@@ -46,20 +58,30 @@
 	            
             }
             </script>
+            <link rel="stylesheet" type="text/css" href="style/Register.css">
+	        <link href='https://fonts.googleapis.com/css?family=Bungee Shade' rel='stylesheet'>
+	        <link href='https://fonts.googleapis.com/css?family=Paprika' rel='stylesheet'>
     </head>
     <body>
-        <p>Registration</p>
-            <input type= "text" id="username">
-            <input type= "text" id="firstname">
-            <input type= "text" id="lastname">
+        <p></p>
+        <label>Username:</label> <input type= "text" id="username"><br><br>
+        <label>Password:</label><input type= "password" id="password"><br><br>
+        <label>Email:</label> <input type= "text" id="email"><br><br>
+        <label>First Name:</label> <input type= "text" id="firstname"><br><br>
+        <label>Last Name:</label><input type= "text" id="lastname"><br><br>
+        <form>
             <input type= "button" 
-                   onclick = "addInterestingStuff(document.getElementById('username').value,document.getElementById('firstname').value,document.getElementById('lastname').value)" 
-                   value= "Add Member"><br><br>
+                   onclick = "addInterestingStuff(document.getElementById('username').value,
+                	                              document.getElementById('password').value,
+                	                              document.getElementById('email').value,
+                                                  document.getElementById('firstname').value,
+                                                  document.getElementById('lastname').value)" 
+                   value= "Register"><br><br>
             <input type="text" id="searchtext">
             <input type= "button" onclick = "searchStuff(document.getElementById('searchtext').value)" value= "Search Members"><br><br>
             <input type="text" id="deletetext">
             <input type= "button" onclick = "deleteMember(document.getElementById('deletetext').value)" value= "Delete Member"><br><br>
-            
+        </form>    
     </body>
    
      

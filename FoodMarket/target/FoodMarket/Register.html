@@ -2,12 +2,23 @@
     <head>
             <script>
 
-            function addInterestingStuff(username, firstname, lastname){
+            function addInterestingStuff(username, password, email, firstname, lastname){
             	var xhr = new XMLHttpRequest();
             	xhr.open("POST", "http://localhost:8080/FoodMarket/example/web/addFromInput", true);
             	xhr.setRequestHeader('Content-Type', 'application/json');
-            	var data = JSON.stringify({"username": username, "first_name": firstname, "last_name": lastname});
+            	var data = JSON.stringify({"username": username, "password": password, "email": email, "first_name": firstname, "last_name": lastname});
             	xhr.send(data);
+            	xhr.onload = function (){
+                	var success = xhr.response;
+                	console.log(success);
+                	console.log(success.result);
+                	if(success.result == "true"){
+                    	alert("success");
+                    }
+                	else{
+                    	alert("fail");
+                    }
+                }
 	            
             }
 
@@ -49,17 +60,24 @@
     </head>
     <body>
         <p>Registration</p>
-            <input type= "text" id="username">
-            <input type= "text" id="firstname">
-            <input type= "text" id="lastname">
+        <form>
+            Username: <input type= "text" id="username"><br><br>
+            Password: <input type= "password" id="password"><br><br>
+            Email: <input type= "text" id="email"><br><br>
+            First Name: <input type= "text" id="firstname"><br><br>
+            Last Name<input type= "text" id="lastname"><br><br>
             <input type= "button" 
-                   onclick = "addInterestingStuff(document.getElementById('username').value,document.getElementById('firstname').value,document.getElementById('lastname').value)" 
-                   value= "Add Member"><br><br>
+                   onclick = "addInterestingStuff(document.getElementById('username').value,
+                	                              document.getElementById('password').value,
+                	                              document.getElementById('email').value,
+                                                  document.getElementById('firstname').value,
+                                                  document.getElementById('lastname').value)" 
+                   value= "Register"><br><br>
             <input type="text" id="searchtext">
             <input type= "button" onclick = "searchStuff(document.getElementById('searchtext').value)" value= "Search Members"><br><br>
             <input type="text" id="deletetext">
             <input type= "button" onclick = "deleteMember(document.getElementById('deletetext').value)" value= "Delete Member"><br><br>
-            
+        </form>    
     </body>
    
      
