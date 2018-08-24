@@ -16,6 +16,7 @@ function register(username, password, password_confirm, email, firstname, lastna
            var success = xhr.response;
            if(success.result == "true"){
                alert("success");
+               window.location.href="index.html";
            }
            else{
                alert("Username/Email already taken");

@@ -29,7 +29,7 @@ public class Login {
 			stmt.setString(1,m.getEmail());
 			stmt.setString(2, m.getPassword());
 			ResultSet rs = stmt.executeQuery();
-            if(rs.next()) {				
+            if(rs.next()) {	
 				success = "true";
 			}
 			c.close();
@@ -41,5 +41,4 @@ public class Login {
 		}			
 		return "{\"result\":\""+success +"\"}";	
 	}
-
 }

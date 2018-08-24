@@ -54,7 +54,7 @@ public class Register {
 				Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
 				String sql = "SELECT * FROM member WHERE First_Name = ?";
 				PreparedStatement stmt = c.prepareStatement(sql);
-				stmt.setString(1,name);	
+				stmt.setString(1,name);
 				ResultSet rs = stmt.executeQuery();
 				JSONObject obj = null;
 			    while (rs.next()) {
@@ -119,6 +119,5 @@ public class Register {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-
 	}
 }

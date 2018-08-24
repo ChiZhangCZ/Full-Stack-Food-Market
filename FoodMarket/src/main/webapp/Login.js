@@ -14,6 +14,7 @@ function login(email, password){
 	    var success = xhr.response;
 	       if(success.result == "true"){
 	           alert("success");
+	           window.location.href="Landing.html";
 	       }
 	       else{
 	           alert("Wrong Login");

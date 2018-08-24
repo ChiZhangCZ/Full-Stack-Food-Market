@@ -22,7 +22,6 @@ public class Connect {
 
 			e.printStackTrace();
 		}
-		System.out.println("Connecting to database...");
 		try {
 		    conn= DriverManager.getConnection(DB_URL, USER, PASS);
 		} catch (SQLException e) {
