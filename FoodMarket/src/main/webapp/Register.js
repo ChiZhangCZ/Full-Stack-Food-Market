@@ -1,4 +1,4 @@
-function addInterestingStuff(username, password, password_confirm, email, firstname, lastname){
+function register(username, password, password_confirm, email, firstname, lastname){
     if(password != password_confirm){
        alert("Passwords do not match");
     }

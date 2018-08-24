@@ -1,3 +1,5 @@
 interoperability\JAXActivator.class
+interoperability\Login.class
+interoperability\Connect.class
 jsonClasses\Member.class
-interoperability\ExampleWebApp.class
+interoperability\Register.class

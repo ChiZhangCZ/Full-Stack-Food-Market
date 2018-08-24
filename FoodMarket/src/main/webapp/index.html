@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Food Market</title>
+	<script type="text/javascript" src="Login.js"></script>
 	<link rel="stylesheet" type="text/css" href="style/LoginPage.css">
 	<link href='https://fonts.googleapis.com/css?family=Bungee Shade' rel='stylesheet'>
 	<link href='https://fonts.googleapis.com/css?family=Snippet' rel='stylesheet'>
@@ -16,7 +17,7 @@
 	<label>Password:</label><input type="Password" name="pass" id="pass"><br><br>
 
     <div class="button">
-	<input type="button" onclick="window.location.href='loggedin.html'" value="Login">
+	<input type="button" onclick="login(document.getElementById('email').value, document.getElementById('pass').value)" value="Login">
 	<input type="button" onclick="window.location.href='Register.html'" value="Register">
 	</div>
     </div>
