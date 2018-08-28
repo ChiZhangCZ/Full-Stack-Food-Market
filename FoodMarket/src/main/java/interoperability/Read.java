@@ -141,6 +141,8 @@ public class Read {
 					obj = new JSONObject();
 					obj.put("First_Name", rs.getString("First_Name"));
 					obj.put("Last_Name", rs.getString("Last_Name"));
+					obj.put("Email", rs.getString("Email"));
+					obj.put("Contact_Number", rs.getString("Contact_Number"));
 					obj.put("HouseNameNo", rs.getString("Default_HouseNameNo"));
 	                obj.put("Postcode", rs.getString("Default_Postcode"));			
 				}

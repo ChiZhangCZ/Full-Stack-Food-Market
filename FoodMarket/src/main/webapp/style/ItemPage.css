@@ -5,7 +5,6 @@
 body{
 
 	background-image: url(chopping.jpg);
-    background-repeat:no-repeat;
     background-size:100% 100vh; 
     font-family: "Snippet"; font-size: 20px;
     font-weight: bold;   

@@ -12,7 +12,7 @@ request.onload = function () {
     element.innerHTML += "<label>Price:</label>"+ item.Price + "<br><br>";
     element.innerHTML += "<label>Number Available:</label>"+ item.Item_Count + "<br><br>";
     
-    var memberURL = 'http://localhost:8080/FoodMarket/example/read/findMember/'+ item.Added_By;;
+    var memberURL = 'http://localhost:8080/FoodMarket/example/read/findMember/'+ item.Added_By;
     var memberRequest = new XMLHttpRequest();
     memberRequest.open('GET', memberURL);
     memberRequest.responseType = 'json';
@@ -22,6 +22,8 @@ request.onload = function () {
         console.log(member);
         let element = document.getElementById("Seller");
         element.innerHTML += "<label>Name:</label>"+ member.First_Name+ " " + member.Last_Name + "<br><br>";
+        element.innerHTML += "<label>Email:</label>"+ member.Email + "<br><br>";
+        element.innerHTML += "<label>Contact Number:</label>"+ member.Contact_Number + "<br><br>";
         element.innerHTML += "<label>House:</label>"+ member.HouseNameNo + "<br><br>";
         element.innerHTML += "<label>Postcode:</label>"+ member.Postcode + "<br><br>";
     }
