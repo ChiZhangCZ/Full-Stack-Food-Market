@@ -21,16 +21,16 @@ public class Login {
 		
 		Connect conn = new Connect();
 		
-		String success= "false";
+		String user= "null";
 		try (Connection c = conn.accessDB();) {
 			Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
-			String sql = "SELECT * FROM member WHERE Email = ? AND Password = ?";
+			String sql = "SELECT * FROM member WHERE Username = ? AND Password = ?";
 			PreparedStatement stmt = c.prepareStatement(sql);
-			stmt.setString(1,m.getEmail());
+			stmt.setString(1,m.getUsername());
 			stmt.setString(2, m.getPassword());
 			ResultSet rs = stmt.executeQuery();
             if(rs.next()) {	
-				success = "true";
+				user = m.getUsername();
 			}
 			c.close();
 		} catch (SQLException se) {
@@ -39,6 +39,6 @@ public class Login {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}			
-		return "{\"result\":\""+success +"\"}";	
+		return "{\"result\":\""+user +"\"}";	
 	}
 }

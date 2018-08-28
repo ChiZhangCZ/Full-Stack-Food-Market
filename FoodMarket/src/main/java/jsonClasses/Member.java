@@ -6,7 +6,29 @@ private String password;
 private String first_name;
 private String last_name;
 private String email;
+private String contact_no;
+private String houseNameNo;
+private String postcode;
 
+
+public String getContact_no() {
+	return contact_no;
+}
+public void setContact_no(String contact_no) {
+	this.contact_no = contact_no;
+}
+public String getHouseNameNo() {
+	return houseNameNo;
+}
+public void setHouseNameNo(String houseNameNo) {
+	this.houseNameNo = houseNameNo;
+}
+public String getPostcode() {
+	return postcode;
+}
+public void setPostcode(String postcode) {
+	this.postcode = postcode;
+}
 public String getUsername() {
 	return username;
 }

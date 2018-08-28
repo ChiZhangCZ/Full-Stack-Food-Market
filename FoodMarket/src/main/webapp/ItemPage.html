@@ -1,0 +1,27 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style/ItemPage.css">
+<link href='https://fonts.googleapis.com/css?family=Snippet' rel='stylesheet'>
+<script type="text/javascript" src="ItemPage.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1l3Qmzz7ltk8TEy-24WsZGYSbzN06kjw&callback=initMap"
+    async defer></script>
+</head>
+<body>
+<h1>Description</h1>
+<div id="Item description"></div>
+<h1>About the Seller</h1>
+<div id="Seller"></div>
+<h1>Map</h1>
+<div id="Map">
+ <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('Map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+      }
+ </script>
+</div>
+</body>
+</html>

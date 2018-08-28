@@ -1,0 +1,19 @@
+#map {
+     height: 100%;
+   }
+   
+body{
+
+	background-image: url(chopping.jpg);
+    background-repeat:no-repeat;
+    background-size:100% 100vh; 
+    font-family: "Snippet"; font-size: 20px;
+    font-weight: bold;   
+}
+
+label {
+    width: 45%;
+    display: inline-block;
+    text-align: right;
+    padding: 15px;
+}

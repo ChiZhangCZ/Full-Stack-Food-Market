@@ -1,5 +1,8 @@
+jsonClasses\Item.class
+jsonClasses\Member.class
+interoperability\Create.class
 interoperability\JAXActivator.class
+interoperability\Read.class
 interoperability\Login.class
 interoperability\Connect.class
-jsonClasses\Member.class
-interoperability\Register.class
+interoperability\Update.class

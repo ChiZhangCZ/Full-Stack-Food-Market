@@ -15,7 +15,7 @@ function register(username, password, password_confirm, email, firstname, lastna
        xhr.onload = function (){
            var success = xhr.response;
            if(success.result == "true"){
-               alert("success");
+               alert("You have successfully registered. Please log in.");
                window.location.href="index.html";
            }
            else{

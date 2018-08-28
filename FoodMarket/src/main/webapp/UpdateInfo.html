@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="style/UpdateInfo.css">
+<link href='https://fonts.googleapis.com/css?family=Snippet' rel='stylesheet'>
+<script type="text/javascript" src="UpdateInfo.js"></script>
+</head>
+<body>
+<label>Contact Number:</label> <input type="text" id="contact number">
+<label>House Name/Number:</label><input type="text" id="House_No">
+<label>Street: </label><input type="text" id="Street">
+<label>Postcode:</label><input type="text" id="postcode" >
+<input type ="button" onclick="updateUser(sessionStorage.getItem('loggedIn'),
+                                          document.getElementById('contact number').value,
+                                          document.getElementById('House_No').value,
+                                          document.getElementById('postcode').value), console.log(sessionStorage.getItem('loggedIn'))" value = "add info"/>
+</body>
+</html>
